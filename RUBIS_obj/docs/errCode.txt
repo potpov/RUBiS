@@ -1,0 +1,54 @@
+list of error codes and meanings:
+
+
+ 1  some field not filled on
+ 2  email not valid
+ 3  region not valid
+ 4  nick already used
+ 5  request from unknown source
+ 6  user-password not filled
+ 7  invalid user or unexisting user at login
+ 8  invalid user id at loading user
+ 9  sold item on bid history
+ 10 item id for best bid not valid
+ 11 user id for item list not valid
+ 12 user id or item id for your best bid not valid
+ 13 Invalid user ID for comments
+ 14 Invalid item ID on ViewUser
+ 15 Invalid item ID on Viewitem
+ 16 Invalid item while trying to get his bids informations
+ 17 No valid category id provided on browseregion
+ 18 not all required field filled on when inserting new item for selling
+ 19 failed to store new item (dbclass)
+ 20 missing parameter in search itemby region
+ 21 missing item id in putbidauth
+ 22 missing fields on new bit storing
+ 23 item id missed or invalid while getting all the bids on item
+ 24 no valid parameters when searching for region on item class
+ 25 user/item not found on putcommentAuth
+ 26 same of 21 but on buynow
+ 27 no valid qty in buynow
+ 28 failed to store new buynow
+ 29 some parameter is invalid on add buy now on item class
+ 30 invalid rating value
+ 31 failed storing comment dbclass
+ 32 invalid parameter creating comment on comment class
+ 33 buy now new quantity is less than zero
+ 34 trying to buy more item than availble
+
+ what's changed about output:
+ almost nothing:
+    -the name in the <title> tag on some pages.
+    -on items you have bid on i chose to avoid item duplication
+        (e.g. you have item currentprice yourmaxbid
+                        1   1000         1000
+                        1   1000         500            (deleted on this version)
+    -on items sold from user there was a bug about current price, the row fetched was wrong and the field
+     was automatically filled with "none". i just wrote none in every row directly.
+    -fixed error on buynow nickname seller (they inserted the buyer nick)
+
+NOTES:
+    a bit of spaghetti code on Item class listing items, not much smart, i know.
+    on this version you can use the InfoTableHeader of log Class instead of printHTMLHighlighted of PHPprinter
+
+

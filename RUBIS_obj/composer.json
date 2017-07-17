@@ -1,0 +1,12 @@
+{
+  "name": "rubis",
+  "description": "rubis oop implementation",
+  "require": {
+    "php": "^5.3.9 || ^7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Rubis\\": "src/"
+    }
+  }
+}
